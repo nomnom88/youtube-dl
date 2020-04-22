@@ -65,9 +65,6 @@ class PatreonIE(InfoExtractor):
         'only_matching': True,
     }]
 
-    # Currently Patreon exposes download URL via hidden CSS, so login is not
-    # needed. Keeping this commented for when this inevitably changes.
-    '''
     def _login(self):
         username, password = self._get_login_info()
         if username is None:
@@ -90,7 +87,6 @@ class PatreonIE(InfoExtractor):
 
     def _real_initialize(self):
         self._login()
-    '''
 
     def _real_extract(self, url):
         video_id = self._match_id(url)
